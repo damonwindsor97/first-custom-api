@@ -1,0 +1,6 @@
+{
+    "name": "Damons Pet and IGN API - Production Mode",
+    "mail": {
+        "host": "production mail server"
+    }
+}

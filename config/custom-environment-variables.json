@@ -1,0 +1,8 @@
+{
+    "mail": {
+        "password": "server_password"
+        },
+    
+    "secretkey":  "SECRET_KEY"
+
+}
