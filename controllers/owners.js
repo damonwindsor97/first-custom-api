@@ -6,7 +6,7 @@ module.exports = {
 
     async postOwners(req, res) {
         try {
-            let { error } = validateOwner(req.body)
+            const { error } = validateOwner(req.body)
             if (error) return res.status(400).send(error.details[0].message)
 
             const pet = await Pet.findById(req.body.petId)
@@ -68,7 +68,8 @@ module.exports = {
             console.log(error)
         }
 
-        owner.name = req.body.nameres.send(owner)
+        owner.name = req.body.name
+        res.send(owner)
     }
 
 

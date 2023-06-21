@@ -35,15 +35,14 @@ module.exports = {
        if (error) return res.status(400).send(error.details[0].message);
     
        try {
-        let pet = await Pet.findByIdAndUpdate(req.params.id, { name: req.body.name })
+        let pet = await Pet.findByIdAndUpdate(req.params.id, { name: req.body.name, owner: req.body.owner })
         if(!pet) return res.status(404).send('The pet with the given ID was not found')
-        res.send(pet);
+        res.send(pet)
+
        } catch (error) {
             console.log(error)
        }
     
-        pet.name = req.body.name
-        res.send(pet)
     },
 
     // DELETE REQUEST

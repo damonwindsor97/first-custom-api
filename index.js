@@ -1,6 +1,9 @@
+// // $env:SECRET_KEY="password1234"
+
 // Imports
 const express = require('express');
 const mongoose = require('mongoose');
+
 
 // Middleware
 const helmet = require('helmet')
@@ -19,13 +22,30 @@ const login = require('./routes/login')
 
 const app = express();
 
+// -----------------------SQL Database stuff---------------------
+
+// const router = require('./routes/sqlusers');
+// const bodyParser = require('body-parser');
+
+// app.use( bodyParser.json());
+// app.use(bodyParser.urlencoded({
+//     extended: false
+// }));
+
+// app.use(router);
+
+// ------------- MySQL end ------------------------
+
+
 mongoose.connect('mongodb://localhost:27017/pets')
     .then(() => { console.log('connected'); })
     .catch((err => { console.log('error', err); }))
 
 if (app.get('env') === 'development') {
     app.use(morgan('tiny'))
-}
+};
+
+
 
 // This middleware creates endpoints for anything within the Public Foldder
 app.use(express.static('public'))
@@ -37,6 +57,8 @@ app.use('/api/pets', pets)
 app.use('/api/owners', owners)
 app.use('/api/users', users)
 app.use('/api/login', login)
+
+
 
 const port = process.env.PORT || 3000
 app.listen(port, () => console.log(' Listening on Port 3000'));
