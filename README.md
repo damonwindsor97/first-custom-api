@@ -28,18 +28,20 @@ JavaScript
 ### Installation
  
  1. You must enter the following password into the Terminal
-    ```sh
- $env:SECRET_KEY="password1234"
+```sh
+   $env:SECRET_KEY="password1234"
+   ```
+ 
 2. Clone the repo
-   ```sh
+```sh
    git clone https://github.com/your_username_/Project-Name.git
    ```
 3. Install NPM packages
-   ```sh
+```sh
    npm install
    ```
 4. Run Nodemon
-   ```sh
+```sh
    nodemon index.js
    ```
 5. Turn on Server on Docker
