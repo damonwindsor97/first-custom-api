@@ -22,7 +22,7 @@ JavaScript
 
 ### Installation
  
- 1. You must enter the following password into the Terminal
+ 1. You must enter the following password into the Terminal (Windows Users)
 ```sh
    $env:SECRET_KEY="password1234"
    ```
@@ -41,6 +41,9 @@ JavaScript
    ```
 5. Turn on Server on Docker
 6. Connect to the server via MongoCompass
+
+### Known Bugs
+
 
    
 
